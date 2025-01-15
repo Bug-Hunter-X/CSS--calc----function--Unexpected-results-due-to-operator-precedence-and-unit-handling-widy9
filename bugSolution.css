@@ -1,0 +1,22 @@
+To avoid these issues, always use parentheses to control the order of operations within `calc()`, and maintain consistent units.  For example:
+
+```css
+/* Correct way to subtract 10px from 50% of parent width */
+.element {
+  width: calc((50% - 10px));
+}
+
+/* More robust handling of potential negative widths */
+.element {
+  width: calc(min(50% - 10px, 100%)); /* Ensure width remains positive */
+}
+
+/* Consistent units for better calculation predictability */
+.element {
+  width: calc(100px + 50px); /* Or use percentages consistently */
+  width: calc(100% + 50%); /*Or use only em units for consistency*/
+  width:calc(1em + 2em)
+}
+```
+
+By following these best practices, you can ensure that `calc()` functions as intended, avoiding unexpected layout problems and improving the reliability of your CSS.
